@@ -1,0 +1,16 @@
+name: Build Web APK (Capacitor)
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Build Package
+        run: |
+          # Note: capacitor.config.json and package.json required for actual build
+          echo "Building APK..."
